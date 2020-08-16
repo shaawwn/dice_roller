@@ -46,18 +46,20 @@ def reroll(number): # To change it back change display to "sixes_display"
     six_list = []
     displays = [sixes_display, fives_display, fours_display, threes_display, twos_display, ones_display]
     sixes = displays[number].get("1.0", tk.END)
-    print(sixes)
+    #fives = displays[1].get("1.0", tk.END)
+    #print(f"These are {fives}")
     for i in sixes:
         if i != "\n" and i != " ":
             six_list.append(i)
-    print(six_list)
+    #print(six_list)
     displays[number].delete("1.0", tk.END)
     for i in six_list:
         reroll = str(randint(1, 6)) + " "
         displays[number].insert(tk.END, reroll)
 
-
-
+def print_test():
+    """Test button press"""
+    print("This is a test")
 
 
 
@@ -169,13 +171,12 @@ ones_display.grid(row=14, column=0)
 # sides_button = tk.Button(window, text="Enter", command=enter_sides).grid(row=3, column=1)
 # times_button = tk.Button(window, text="Enter", command=enter_rolls).grid(row=5, column=1)
 roll_button = tk.Button(window, text="Roll!", command=display_outcome).grid(row=8, column=0)
-sixes_label = tk.Button(window, text="6s rolled", command=reroll(0))
-sixes_label.grid(row=9, sticky=tk.W)
-fives_label = tk.Button(window, text="5s rolled", command=reroll).grid(row=10, sticky=tk.W)
-fours_label = tk.Button(window, text="4s rolled", command=reroll).grid(row=11, sticky=tk.W)
-threes_label = tk.Button(window, text="3s rolled", command=reroll).grid(row=12, sticky=tk.W)
-twos_label = tk.Button(window, text="2s rolled", command=reroll).grid(row=13, sticky=tk.W)
-ones_label = tk.Button(window, text="1s rolled", command=reroll).grid(row=14, sticky=tk.W)
+sixes_button = tk.Button(window, text="6s rolled", command=lambda: reroll(0)).grid(row=9, sticky=tk.W)
+fives_button = tk.Button(window, text="5s rolled", command=lambda: reroll(1)).grid(row=10, sticky=tk.W)
+fours_button = tk.Button(window, text="4s rolled", command=lambda: reroll(2)).grid(row=11, sticky=tk.W)
+threes_button = tk.Button(window, text="3s rolled", command=lambda: reroll(3)).grid(row=12, sticky=tk.W)
+twos_button = tk.Button(window, text="2s rolled", command=lambda: reroll(4)).grid(row=13, sticky=tk.W)
+ones_button = tk.Button(window, text="1s rolled", command=lambda: reroll(5)).grid(row=14, sticky=tk.W)
 
 
 window.grid_columnconfigure(4, minsize=50)
