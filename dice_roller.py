@@ -7,6 +7,7 @@ from random import randint
 window = tk.Tk()
 window.title("Dice Roller")
 window.geometry("350x350")
+window.iconbitmap('c:/users/shawn/pycharmprojects/savings_calc/tk_dice_roller/dice_roller.ico')
 
 
 # ---FUNCTIONS---
