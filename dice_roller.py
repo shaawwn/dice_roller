@@ -33,12 +33,8 @@ def roll_die(sides):
 def clear_rolls():
     """Clear the outcome window"""
     displays = [sixes_display, fives_display, fours_display, threes_display, twos_display, ones_display]
-    sixes_display.delete("1.0", tk.END)
-    fives_display.delete("1.0", tk.END)
-    fours_display.delete("1.0", tk.END)
-    threes_display.delete("1.0", tk.END)
-    twos_display.delete("1.0", tk.END)
-    ones_display.delete("1.0", tk.END)
+    for display in displays:
+        display.delete("1.0", tk.END)
 
 
 def reroll(number): #
