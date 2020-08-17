@@ -47,7 +47,7 @@ def reroll(number): #
             six_list.append(i)
     displays[number].delete("1.0", tk.END)
     for i in six_list:
-        reroll = str(randint(1, 6)) + " "
+        reroll = str(randint(1, enter_sides())) + " "
         displays[number].insert(tk.END, reroll)
 
 
